@@ -4,28 +4,19 @@
 
 function openGift() {
 
-    const music =
-        document.getElementById("bg-music");
+    const music = document.getElementById("bg-music");
 
     music.volume = 0.4;
 
     music.play()
         .then(() => {
-
-            console.log("Music is playing!");
-
+            console.log("Music started successfully");
         })
         .catch((error) => {
-
-            console.log(
-                "Music could not start:",
-                error
-            );
-
+            console.error("Music failed:", error);
         });
 
     nextSection("cake-section");
-
 }
 
 
@@ -36,91 +27,55 @@ function openGift() {
 function nextSection(sectionId) {
 
     const currentSection =
-        document.querySelector(
-            ".screen.active"
-        );
+        document.querySelector(".screen.active");
 
     const nextSection =
-        document.getElementById(
-            sectionId
-        );
-
+        document.getElementById(sectionId);
 
     if (currentSection) {
-
-        currentSection.classList.remove(
-            "active"
-        );
-
+        currentSection.classList.remove("active");
     }
 
-
     setTimeout(() => {
-
-        nextSection.classList.add(
-            "active"
-        );
-
+        nextSection.classList.add("active");
     }, 300);
-
 }
 
 
 /* =========================
-   CANDLE
+   CANDLES
 ========================= */
 
 const candles =
-    document.querySelectorAll(
-        ".candle"
-    );
-
+    document.querySelectorAll(".candle");
 
 const cakeNext =
-    document.getElementById(
-        "cake-next"
-    );
-
+    document.getElementById("cake-next");
 
 const blowText =
-    document.getElementById(
-        "blow-text"
-    );
+    document.getElementById("blow-text");
 
 
 candles.forEach(candle => {
 
-    candle.addEventListener(
-        "click",
-        () => {
+    candle.addEventListener("click", () => {
 
-            candle.classList.add(
-                "off"
+        candle.classList.add("off");
+
+        const remainingCandles =
+            document.querySelectorAll(
+                ".candle:not(.off)"
             );
 
+        if (remainingCandles.length === 0) {
 
-            const remainingCandles =
-                document.querySelectorAll(
-                    ".candle:not(.off)"
-                );
+            blowText.innerHTML =
+                "Wish made. ✨";
 
-
-            if (
-                remainingCandles.length === 0
-            ) {
-
-                blowText.innerHTML =
-                    "Wish made. ✨";
-
-
-                cakeNext.classList.remove(
-                    "hidden"
-                );
-
-            }
-
+            cakeNext.classList.remove("hidden");
         }
-    );
+
+    });
 
 });
 
@@ -132,15 +87,9 @@ candles.forEach(candle => {
 function sayYes() {
 
     const message =
-        document.getElementById(
-            "yes-message"
-        );
+        document.getElementById("yes-message");
 
-
-    message.classList.add(
-        "show"
-    );
-
+    message.classList.add("show");
 
     createConfetti();
 
@@ -161,18 +110,10 @@ function createConfetti() {
         "✦"
     ];
 
-
-    for (
-        let i = 0;
-        i < 30;
-        i++
-    ) {
+    for (let i = 0; i < 30; i++) {
 
         const confetti =
-            document.createElement(
-                "div"
-            );
-
+            document.createElement("div");
 
         confetti.innerHTML =
             symbols[
@@ -182,84 +123,47 @@ function createConfetti() {
                 )
             ];
 
-
-        confetti.style.position =
-            "fixed";
-
+        confetti.style.position = "fixed";
 
         confetti.style.left =
-            Math.random() * 100 +
-            "vw";
+            Math.random() * 100 + "vw";
 
-
-        confetti.style.top =
-            "-30px";
-
+        confetti.style.top = "-30px";
 
         confetti.style.fontSize =
-            Math.random() * 15 +
-            15 +
-            "px";
+            Math.random() * 15 + 15 + "px";
 
+        confetti.style.zIndex = "999";
 
-        confetti.style.zIndex =
-            "999";
+        confetti.style.pointerEvents = "none";
 
-
-        confetti.style.pointerEvents =
-            "none";
-
-
-        document.body.appendChild(
-            confetti
-        );
-
+        document.body.appendChild(confetti);
 
         const duration =
             Math.random() * 3 + 2;
 
-
         confetti.animate(
-
             [
-
                 {
                     transform:
                         "translateY(0) rotate(0deg)",
-
                     opacity: 1
                 },
-
                 {
                     transform:
                         "translateY(110vh) rotate(360deg)",
-
                     opacity: 0
                 }
-
             ],
-
             {
-
-                duration:
-                    duration * 1000,
-
-                easing:
-                    "ease-out"
-
+                duration: duration * 1000,
+                easing: "ease-out"
             }
-
         );
 
-
-        setTimeout(
-            () => {
-
-                confetti.remove();
-
-            },
-            duration * 1000
-        );
+        setTimeout(() => {
+            confetti.remove();
+        }, duration * 1000);
 
     }
 
