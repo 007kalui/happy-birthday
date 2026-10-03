@@ -1,7 +1,6 @@
 /* =========================
    OPEN GIFT
 ========================= */
-
 function openGift() {
 
     const music = document.getElementById("bg-music");
@@ -13,7 +12,6 @@ function openGift() {
     });
 
     nextSection("cake-section");
-
 }
 
 /* =========================
