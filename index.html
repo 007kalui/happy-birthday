@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================
+         OPENING
+    ========================== -->
+
+    <section id="opening" class="screen active">
+
+        <div class="stars"></div>
+
+        <div class="opening-content">
+
+            <p class="small-text">
+                I made something for you...
+            </p>
+
+            <div class="gift-box">
+                🎁
+            </div>
+
+            <h1>
+                A little surprise<br>
+                for someone special
+            </h1>
+
+            <button onclick="openGift()" class="main-button">
+                Open it 🤍
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAKE
+    ========================== -->
+
+    <section id="cake-section" class="screen">
+
+        <div class="cake-container">
+
+            <p class="small-text">
+                Before anything else...
+            </p>
+
+            <h2>
+                Make a wish. 🕯️
+            </h2>
+
+            <div class="cake">
+
+                <div class="candle candle1">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle2">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle3">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="cake-top"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-bottom"></div>
+
+            </div>
+
+            <p id="blow-text">
+                Tap the candles to blow them out ✨
+            </p>
+
+            <button
+                id="cake-next"
+                onclick="nextSection('message-section')"
+                class="main-button hidden">
+                Continue 🤍
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY MESSAGE
+    ========================== -->
+
+    <section id="message-section" class="screen">
+
+        <div class="message-container">
+
+            <p class="small-text">
+                Happy Birthday
+            </p>
+
+            <h1>
+                To my favorite person.
+            </h1>
+
+            <div class="letter">
+
+                <p>
+                    Happy birthday, sayang. 🤍
+                </p>
+
+                <p>
+                    I hope this new chapter of your life
+                    brings you a lot of happiness, peaceful days,
+                    exciting things to look forward to,
+                    and all the little things that make you smile.
+                </p>
+
+                <p>
+                    Thank you for being someone I can laugh with,
+                    talk to, annoy a little bit,
+                    and make memories with.
+                </p>
+
+                <p>
+                    I may not always know the perfect thing to say,
+                    but I hope you know that having you in my life
+                    means a lot to me.
+                </p>
+
+                <p>
+                    So today is about you.
+                    Your birthday.
+                    Your happiness.
+                </p>
+
+                <p class="signature">
+                    With love,<br>
+                    me 🤍
+                </p>
+
+            </div>
+
+            <button
+                onclick="nextSection('memories-section')"
+                class="main-button">
+                Keep going →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+
+    <section id="memories-section" class="screen">
+
+        <div class="memories-container">
+
+            <p class="small-text">
+                A few little memories
+            </p>
+
+            <h2>
+                Moments I want to keep.
+            </h2>
+
+            <div class="photo-grid">
+
+                <div class="photo-card">
+                    <img src="assets/photo1.jpg" alt="Our memory">
+                    <p>one of my favorite moments</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/photo2.jpg" alt="Our memory">
+                    <p>another memory with you</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/photo3.jpg" alt="Our memory">
+                    <p>and hopefully, many more</p>
+                </div>
+
+            </div>
+
+            <button
+                onclick="nextSection('final-section')"
+                class="main-button">
+                One last thing...
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL INVITATION
+    ========================== -->
+
+    <section id="final-section" class="screen">
+
+        <div class="final-container">
+
+            <div class="candle-icon">
+                🕯️
+            </div>
+
+            <p class="small-text">
+                I have one more question...
+            </p>
+
+            <h1>
+                Will you go to a
+                <span>Candlelight Concert</span>
+                with me?
+            </h1>
+
+            <p class="final-text">
+                Just you, me, beautiful music,
+                and a room full of candlelight.
+            </p>
+
+            <div class="answer-buttons">
+
+                <button
+                    onclick="sayYes()"
+                    class="yes-button">
+                    YES 🤍
+                </button>
+
+                <button
+                    onclick="sayYes()"
+                    class="yes-button secondary">
+                    Of course ✨
+                </button>
+
+            </div>
+
+            <div id="yes-message" class="yes-message">
+
+                <div class="confetti">✨</div>
+
+                <h2>
+                    It's a date. 🤍
+                </h2>
+
+                <p>
+                    I can't wait to make another memory with you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
