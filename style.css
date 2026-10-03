@@ -1,0 +1,617 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #191416;
+    color: #f8eee9;
+    overflow: hidden;
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+
+    overflow-y: auto;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+#opening {
+    background:
+        radial-gradient(
+            circle at center,
+            #443036 0%,
+            #24191d 45%,
+            #120e10 100%
+        );
+}
+
+.opening-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.gift-box {
+    font-size: 100px;
+    margin: 20px 0 30px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.opening-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 7vw, 70px);
+    line-height: 1.15;
+    font-weight: 400;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button,
+.yes-button {
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    background: #f4e4dc;
+    color: #271b1f;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.main-button:hover,
+.yes-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+#cake-section {
+    background:
+        radial-gradient(
+            circle at center,
+            #49353b,
+            #21171a 70%
+        );
+}
+
+.cake-container {
+    text-align: center;
+}
+
+.cake-container h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 6vw, 60px);
+
+    font-weight: 400;
+
+    margin-bottom: 45px;
+}
+
+.cake {
+    position: relative;
+
+    width: 250px;
+    height: 210px;
+
+    margin: 0 auto 35px;
+}
+
+.cake-bottom,
+.cake-middle,
+.cake-top {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 15px;
+}
+
+.cake-bottom {
+    bottom: 0;
+
+    width: 240px;
+    height: 70px;
+
+    background: #9f6d6c;
+}
+
+.cake-middle {
+    bottom: 55px;
+
+    width: 220px;
+    height: 70px;
+
+    background: #c18d87;
+}
+
+.cake-top {
+    bottom: 110px;
+
+    width: 200px;
+    height: 65px;
+
+    background: #e0b5a9;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   CANDLES
+========================= */
+
+.candle {
+    position: absolute;
+
+    bottom: 155px;
+
+    width: 12px;
+    height: 50px;
+
+    background: #f6e9d9;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.candle1 {
+    left: 75px;
+}
+
+.candle2 {
+    left: 119px;
+}
+
+.candle3 {
+    right: 75px;
+}
+
+.flame {
+    position: absolute;
+
+    width: 15px;
+    height: 22px;
+
+    left: 50%;
+    top: -20px;
+
+    transform: translateX(-50%);
+
+    background: #ffd27d;
+
+    border-radius: 50% 50% 50% 50%;
+
+    animation: flicker 0.8s infinite alternate;
+}
+
+.candle.off .flame {
+    display: none;
+}
+
+#blow-text {
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message-section {
+    background:
+        linear-gradient(
+            135deg,
+            #332327,
+            #1a1316
+        );
+}
+
+.message-container {
+    width: min(700px, 100%);
+    text-align: center;
+}
+
+.message-container h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 7vw, 65px);
+
+    font-weight: 400;
+
+    margin-bottom: 35px;
+}
+
+.letter {
+    background: rgba(255, 244, 238, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: left;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+#memories-section {
+    background: #eee1db;
+    color: #2b2022;
+}
+
+.memories-container {
+    width: min(1000px, 100%);
+
+    text-align: center;
+}
+
+.memories-container h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 6vw, 60px);
+
+    font-weight: 400;
+
+    margin-bottom: 45px;
+}
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+.photo-card {
+    background: #fffaf7;
+
+    padding: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(65, 42, 42, 0.15);
+
+    transform: rotate(-2deg);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+.photo-card img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.photo-card p {
+    padding: 15px 5px 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+#final-section {
+    background:
+        radial-gradient(
+            circle at center,
+            #493239,
+            #130e10 75%
+        );
+}
+
+.final-container {
+    width: min(750px, 100%);
+
+    text-align: center;
+}
+
+.candle-icon {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.final-container h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 7vw, 75px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+.final-container h1 span {
+    display: block;
+
+    font-style: italic;
+
+    color: #e7b8aa;
+}
+
+.final-text {
+    opacity: 0.7;
+
+    font-size: 16px;
+
+    margin-bottom: 35px;
+}
+
+.answer-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.yes-button {
+    min-width: 150px;
+}
+
+.yes-button.secondary {
+    background: transparent;
+
+    color: #f8eee9;
+
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.yes-message {
+    display: none;
+
+    margin-top: 40px;
+
+    animation: appear 1s ease;
+}
+
+.yes-message.show {
+    display: block;
+}
+
+.yes-message h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.confetti {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes flicker {
+
+    0% {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            scale(1.15);
+    }
+
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .screen {
+        padding: 25px 20px;
+    }
+
+    .gift-box {
+        font-size: 75px;
+    }
+
+    .letter {
+        padding: 25px;
+
+        font-size: 14px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 280px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .photo-card {
+        transform: rotate(0deg);
+    }
+
+    .photo-card:nth-child(2),
+    .photo-card:nth-child(3) {
+        transform: rotate(0deg);
+    }
+
+    .cake {
+        transform: scale(0.85);
+    }
+
+    .final-container h1 {
+        font-size: 43px;
+    }
+
+}
