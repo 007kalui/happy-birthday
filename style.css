@@ -27,8 +27,10 @@ body {
 .screen {
     position: fixed;
     inset: 0;
-    min-height: 100vh;
+
     width: 100%;
+    height: 100vh;
+    height: 100dvh;
 
     display: flex;
     align-items: center;
@@ -46,8 +48,11 @@ body {
         transform 0.8s ease,
         visibility 0.8s;
 
+    overflow-x: hidden;
     overflow-y: auto;
+
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .screen.active {
@@ -309,7 +314,7 @@ body {
     width:
         min(700px, 100%);
 
-    height: 100%;
+    min-height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -322,6 +327,7 @@ body {
 
 .message-heading {
     flex-shrink: 0;
+
     margin-bottom: 25px;
 }
 
@@ -374,10 +380,9 @@ body {
     line-height: 1.8;
 
     margin-bottom: 25px;
+
+    -webkit-overflow-scrolling: touch;
 }
-
-
-/* scrollbar */
 
 .letter::-webkit-scrollbar {
     width: 5px;
@@ -425,7 +430,8 @@ body {
 
     text-align: center;
 
-    padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 70px;
 }
 
 .memories-container h2 {
@@ -541,6 +547,9 @@ body {
         min(750px, 100%);
 
     text-align: center;
+
+    padding-top: 20px;
+    padding-bottom: 60px;
 }
 
 .candle-icon {
@@ -729,7 +738,6 @@ body {
         transform:
             translateY(0);
     }
-
 }
 
 @keyframes flicker {
@@ -745,7 +753,6 @@ body {
             translateX(-50%)
             scale(1.15);
     }
-
 }
 
 @keyframes appear {
@@ -763,7 +770,6 @@ body {
         transform:
             translateY(0);
     }
-
 }
 
 @keyframes ticketReveal {
@@ -785,7 +791,6 @@ body {
             rotate(-1deg)
             scale(1);
     }
-
 }
 
 
@@ -796,38 +801,32 @@ body {
 @media (max-width: 767px) {
 
     .screen {
-        padding: 25px 20px;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+
+        padding:
+            40px 20px;
 
         align-items: flex-start;
-    }
+        justify-content: center;
 
+        overflow-x: hidden;
+        overflow-y: auto;
 
-    /* =========================
-       MEMORIES MOBILE
-    ========================= */
+        -webkit-overflow-scrolling: touch;
 
-    #memories-section {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .memories-container {
-        width: 100%;
-        padding-bottom: 20px;
-    }
-
-    .memories-container h2 {
-        font-size: 36px;
-    }
-
-    .memory-intro {
-        margin-bottom: 30px;
+        overscroll-behavior: contain;
     }
 
 
     /* =========================
        OPENING MOBILE
     ========================= */
+
+    .opening-content {
+        width: 100%;
+    }
 
     .gift-box {
         font-size: 75px;
@@ -839,14 +838,33 @@ body {
 
 
     /* =========================
+       CAKE MOBILE
+    ========================= */
+
+    .cake {
+        transform:
+            scale(0.85);
+    }
+
+
+    /* =========================
        MESSAGE MOBILE
     ========================= */
 
-    .message-container {
-        justify-content: flex-start;
+    #message-section {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
 
-        padding-top: 25px;
-        padding-bottom: 25px;
+    .message-container {
+        width: 100%;
+        min-height: auto;
+
+        justify-content:
+            flex-start;
+
+        padding-top: 10px;
+        padding-bottom: 40px;
     }
 
     .message-heading {
@@ -867,18 +885,41 @@ body {
 
 
     /* =========================
-       PHOTO MOBILE
+       MEMORIES MOBILE
     ========================= */
+
+    #memories-section {
+        padding-top: 50px;
+        padding-bottom: 80px;
+
+        align-items: flex-start;
+    }
+
+    .memories-container {
+        width: 100%;
+
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+
+    .memories-container h2 {
+        font-size: 36px;
+    }
+
+    .memory-intro {
+        margin-bottom: 30px;
+    }
 
     .photo-grid {
         grid-template-columns: 1fr;
 
+        width: 100%;
         max-width: 280px;
 
         margin-left: auto;
         margin-right: auto;
 
-        margin-bottom: 35px;
+        margin-bottom: 40px;
     }
 
     .photo-card {
@@ -894,21 +935,31 @@ body {
 
 
     /* =========================
-       CAKE MOBILE
-    ========================= */
-
-    .cake {
-        transform:
-            scale(0.85);
-    }
-
-
-    /* =========================
        FINAL MOBILE
     ========================= */
 
+    #final-section {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
+
+    .final-container {
+        width: 100%;
+
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
     .final-container h1 {
         font-size: 43px;
+    }
+
+    .final-text {
+        font-size: 15px;
+    }
+
+    .yes-message {
+        margin-top: 35px;
     }
 
     .yes-message h2 {
