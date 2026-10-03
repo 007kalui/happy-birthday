@@ -14,11 +14,8 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-
     background: #191416;
-
     color: #f8eee9;
-
     overflow: hidden;
 }
 
@@ -28,25 +25,18 @@ body {
 ========================= */
 
 .screen {
-
     position: fixed;
-
     inset: 0;
-
     min-height: 100vh;
-
     width: 100%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     padding: 30px;
 
     opacity: 0;
-
     visibility: hidden;
 
     transform: scale(1.03);
@@ -57,16 +47,13 @@ body {
         visibility 0.8s;
 
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .screen.active {
-
     opacity: 1;
-
     visibility: visible;
-
     transform: scale(1);
-
 }
 
 
@@ -75,7 +62,6 @@ body {
 ========================= */
 
 #opening {
-
     background:
         radial-gradient(
             circle at center,
@@ -83,44 +69,30 @@ body {
             #24191d 45%,
             #120e10 100%
         );
-
 }
 
 .opening-content {
-
     text-align: center;
-
     max-width: 600px;
-
 }
 
 .small-text {
-
     font-size: 14px;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
-
     opacity: 0.7;
-
     margin-bottom: 20px;
-
 }
 
 .gift-box {
-
     font-size: 100px;
-
     margin: 20px 0 30px;
 
     animation:
         floating 3s ease-in-out infinite;
-
 }
 
 .opening-content h1 {
-
     font-family:
         "Playfair Display",
         serif;
@@ -129,11 +101,9 @@ body {
         clamp(40px, 7vw, 70px);
 
     line-height: 1.15;
-
     font-weight: 400;
 
     margin-bottom: 35px;
-
 }
 
 
@@ -143,7 +113,6 @@ body {
 
 .main-button,
 .yes-button {
-
     border: none;
 
     padding: 14px 28px;
@@ -151,30 +120,25 @@ body {
     border-radius: 50px;
 
     font-family: inherit;
-
     font-size: 15px;
 
     cursor: pointer;
 
     background: #f4e4dc;
-
     color: #271b1f;
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
-
 }
 
 .main-button:hover,
 .yes-button:hover {
-
     transform: translateY(-4px);
 
     box-shadow:
         0 10px 30px
         rgba(0, 0, 0, 0.25);
-
 }
 
 
@@ -183,24 +147,19 @@ body {
 ========================= */
 
 #cake-section {
-
     background:
         radial-gradient(
             circle at center,
             #49353b,
             #21171a 70%
         );
-
 }
 
 .cake-container {
-
     text-align: center;
-
 }
 
 .cake-container h2 {
-
     font-family:
         "Playfair Display",
         serif;
@@ -211,28 +170,21 @@ body {
     font-weight: 400;
 
     margin-bottom: 45px;
-
 }
 
-
 .cake {
-
     position: relative;
 
     width: 250px;
-
     height: 210px;
 
     margin:
         0 auto 35px;
-
 }
-
 
 .cake-bottom,
 .cake-middle,
 .cake-top {
-
     position: absolute;
 
     left: 50%;
@@ -241,48 +193,35 @@ body {
         translateX(-50%);
 
     border-radius: 15px;
-
 }
 
-
 .cake-bottom {
-
     bottom: 0;
 
     width: 240px;
-
     height: 70px;
 
     background: #9f6d6c;
-
 }
 
-
 .cake-middle {
-
     bottom: 55px;
 
     width: 220px;
-
     height: 70px;
 
     background: #c18d87;
-
 }
 
-
 .cake-top {
-
     bottom: 110px;
 
     width: 200px;
-
     height: 65px;
 
     background: #e0b5a9;
 
     border-radius: 50%;
-
 }
 
 
@@ -291,13 +230,11 @@ body {
 ========================= */
 
 .candle {
-
     position: absolute;
 
     bottom: 155px;
 
     width: 12px;
-
     height: 50px;
 
     background: #f6e9d9;
@@ -307,9 +244,7 @@ body {
     cursor: pointer;
 
     z-index: 10;
-
 }
-
 
 .candle1 {
     left: 75px;
@@ -323,17 +258,13 @@ body {
     right: 75px;
 }
 
-
 .flame {
-
     position: absolute;
 
     width: 15px;
-
     height: 22px;
 
     left: 50%;
-
     top: -20px;
 
     transform:
@@ -345,23 +276,16 @@ body {
 
     animation:
         flicker 0.8s infinite alternate;
-
 }
-
 
 .candle.off .flame {
     display: none;
 }
 
-
 #blow-text {
-
     opacity: 0.7;
-
     margin-bottom: 25px;
-
 }
-
 
 .hidden {
     display: none;
@@ -372,60 +296,40 @@ body {
    MESSAGE
 ========================= */
 
-/* =========================
-   MESSAGE
-========================= */
-
 #message-section {
-
     background:
         linear-gradient(
             135deg,
             #332327,
             #1a1316
         );
-
 }
 
-
 .message-container {
-
     width:
         min(700px, 100%);
 
     height: 100%;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
-
 }
-
 
 .message-heading {
-
     flex-shrink: 0;
-
     margin-bottom: 25px;
-
 }
-
 
 .message-heading .small-text {
-
     margin-bottom: 8px;
-
 }
 
-
 .message-heading h1 {
-
     font-family:
         "Playfair Display",
         serif;
@@ -434,14 +338,10 @@ body {
         clamp(42px, 7vw, 65px);
 
     font-weight: 400;
-
     line-height: 1.1;
-
 }
 
-
 .letter {
-
     width: 100%;
 
     max-height: 55vh;
@@ -474,21 +374,16 @@ body {
     line-height: 1.8;
 
     margin-bottom: 25px;
-
 }
 
 
 /* scrollbar */
 
 .letter::-webkit-scrollbar {
-
     width: 5px;
-
 }
 
-
 .letter::-webkit-scrollbar-thumb {
-
     background:
         rgba(
             255,
@@ -498,19 +393,13 @@ body {
         );
 
     border-radius: 10px;
-
 }
-
 
 .letter p {
-
     margin-bottom: 18px;
-
 }
 
-
 .signature {
-
     font-family:
         "Playfair Display",
         serif;
@@ -518,33 +407,28 @@ body {
     font-size: 22px;
 
     margin-top: 30px;
-
 }
+
+
 /* =========================
    MEMORIES
 ========================= */
 
 #memories-section {
-
     background: #eee1db;
-
     color: #2b2022;
-
 }
 
-
 .memories-container {
-
     width:
         min(1000px, 100%);
 
     text-align: center;
 
+    padding-bottom: 60px;
 }
 
-
 .memories-container h2 {
-
     font-family:
         "Playfair Display",
         serif;
@@ -557,12 +441,9 @@ body {
     line-height: 1.2;
 
     margin-bottom: 25px;
-
 }
 
-
 .memory-intro {
-
     max-width: 700px;
 
     margin:
@@ -571,12 +452,9 @@ body {
     line-height: 1.7;
 
     opacity: 0.75;
-
 }
 
-
 .photo-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -585,12 +463,9 @@ body {
     gap: 25px;
 
     margin-bottom: 40px;
-
 }
 
-
 .photo-card {
-
     background: #fffaf7;
 
     padding: 10px;
@@ -608,37 +483,25 @@ body {
 
     transition:
         transform 0.3s ease;
-
 }
-
 
 .photo-card:nth-child(2) {
-
     transform:
         rotate(2deg);
-
 }
-
 
 .photo-card:nth-child(3) {
-
     transform:
         rotate(-1deg);
-
 }
 
-
 .photo-card:hover {
-
     transform:
         rotate(0deg)
         translateY(-8px);
-
 }
 
-
 .photo-card img {
-
     width: 100%;
 
     aspect-ratio: 1 / 1;
@@ -646,12 +509,9 @@ body {
     object-fit: cover;
 
     display: block;
-
 }
 
-
 .photo-card p {
-
     padding:
         15px 5px 10px;
 
@@ -660,7 +520,6 @@ body {
         serif;
 
     font-size: 15px;
-
 }
 
 
@@ -669,41 +528,31 @@ body {
 ========================= */
 
 #final-section {
-
     background:
         radial-gradient(
             circle at center,
             #493239,
             #130e10 75%
         );
-
 }
 
-
 .final-container {
-
     width:
         min(750px, 100%);
 
     text-align: center;
-
 }
 
-
 .candle-icon {
-
     font-size: 60px;
 
     margin-bottom: 20px;
 
     animation:
         floating 3s ease-in-out infinite;
-
 }
 
-
 .final-container h1 {
-
     font-family:
         "Playfair Display",
         serif;
@@ -716,34 +565,25 @@ body {
     font-weight: 400;
 
     margin-bottom: 25px;
-
 }
 
-
 .final-container h1 span {
-
     display: block;
 
     font-style: italic;
 
     color: #e7b8aa;
-
 }
 
-
 .final-text {
-
     opacity: 0.7;
 
     font-size: 16px;
 
     margin-bottom: 35px;
-
 }
 
-
 .answer-buttons {
-
     display: flex;
 
     justify-content: center;
@@ -751,19 +591,13 @@ body {
     gap: 15px;
 
     flex-wrap: wrap;
-
 }
-
 
 .yes-button {
-
     min-width: 150px;
-
 }
 
-
 .yes-button.secondary {
-
     background: transparent;
 
     color: #f8eee9;
@@ -776,7 +610,6 @@ body {
             255,
             0.3
         );
-
 }
 
 
@@ -785,26 +618,19 @@ body {
 ========================= */
 
 .yes-message {
-
     display: none;
 
     margin-top: 40px;
 
     animation:
         appear 1s ease;
-
 }
-
 
 .yes-message.show {
-
     display: block;
-
 }
 
-
 .yes-message h2 {
-
     font-family:
         "Playfair Display",
         serif;
@@ -814,28 +640,19 @@ body {
     font-weight: 400;
 
     margin-bottom: 10px;
-
 }
-
 
 .yes-message p {
-
     margin-bottom: 10px;
-
 }
 
-
 .confetti {
-
     font-size: 40px;
 
     margin-bottom: 10px;
-
 }
 
-
 .ticket-container {
-
     width:
         min(500px, 90%);
 
@@ -861,12 +678,9 @@ body {
 
     animation:
         ticketReveal 1s ease forwards;
-
 }
 
-
 .ticket-image {
-
     display: block;
 
     width: 100%;
@@ -874,12 +688,9 @@ body {
     height: auto;
 
     border-radius: 6px;
-
 }
 
-
 .ticket-caption {
-
     font-family:
         "Playfair Display",
         serif;
@@ -887,18 +698,14 @@ body {
     font-size: 17px;
 
     opacity: 0.8;
-
 }
 
-
 .last-message {
-
     font-size: 14px;
 
     opacity: 0.6;
 
     margin-top: 20px;
-
 }
 
 
@@ -925,73 +732,58 @@ body {
 
 }
 
-
 @keyframes flicker {
 
     0% {
-
         transform:
             translateX(-50%)
             scale(1);
-
     }
 
     100% {
-
         transform:
             translateX(-50%)
             scale(1.15);
-
     }
 
 }
-
 
 @keyframes appear {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(20px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
 
 }
 
-
 @keyframes ticketReveal {
 
     0% {
-
         opacity: 0;
 
         transform:
             translateY(30px)
             rotate(-5deg)
             scale(0.9);
-
     }
 
     100% {
-
         opacity: 1;
 
         transform:
             translateY(0)
             rotate(-1deg)
             scale(1);
-
     }
 
 }
@@ -1004,92 +796,127 @@ body {
 @media (max-width: 767px) {
 
     .screen {
+        padding: 25px 20px;
 
-        padding:
-            25px 20px;
-
+        align-items: flex-start;
     }
 
+
+    /* =========================
+       MEMORIES MOBILE
+    ========================= */
+
+    #memories-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .memories-container {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .memories-container h2 {
+        font-size: 36px;
+    }
+
+    .memory-intro {
+        margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       OPENING MOBILE
+    ========================= */
 
     .gift-box {
-
         font-size: 75px;
-
     }
-
 
     .opening-content h1 {
-
         font-size: 43px;
-
     }
 
 
+    /* =========================
+       MESSAGE MOBILE
+    ========================= */
+
+    .message-container {
+        justify-content: flex-start;
+
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .message-heading {
+        margin-bottom: 20px;
+    }
+
+    .message-heading h1 {
+        font-size: 43px;
+    }
+
     .letter {
+        max-height: 58vh;
 
         padding: 25px;
 
         font-size: 14px;
-
     }
 
 
-    .photo-grid {
+    /* =========================
+       PHOTO MOBILE
+    ========================= */
 
+    .photo-grid {
         grid-template-columns: 1fr;
 
         max-width: 280px;
 
         margin-left: auto;
-
         margin-right: auto;
 
+        margin-bottom: 35px;
     }
-
 
     .photo-card {
-
         transform:
             rotate(0deg);
-
     }
-
 
     .photo-card:nth-child(2),
     .photo-card:nth-child(3) {
-
         transform:
             rotate(0deg);
-
     }
 
+
+    /* =========================
+       CAKE MOBILE
+    ========================= */
 
     .cake {
-
         transform:
             scale(0.85);
-
     }
 
+
+    /* =========================
+       FINAL MOBILE
+    ========================= */
 
     .final-container h1 {
-
         font-size: 43px;
-
     }
-
 
     .yes-message h2 {
-
         font-size: 34px;
-
     }
 
-
     .ticket-container {
-
         width: 95%;
-
     }
 
 }
