@@ -2,14 +2,17 @@
    OPEN GIFT
 ========================= */
 function openGift() {
-
     const music = document.getElementById("bg-music");
 
-    music.volume = 0.4;
+    music.volume = 0.5;
 
-    music.play().catch(error => {
-        console.log("Music could not start:", error);
-    });
+    music.play()
+        .then(() => {
+            console.log("Music is playing!");
+        })
+        .catch((error) => {
+            console.log("Music failed to play:", error);
+        });
 
     nextSection("cake-section");
 }
