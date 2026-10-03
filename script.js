@@ -4,10 +4,17 @@
 
 function openGift() {
 
+    const music = document.getElementById("bg-music");
+
+    music.volume = 0.4;
+
+    music.play().catch(error => {
+        console.log("Music could not start:", error);
+    });
+
     nextSection("cake-section");
 
 }
-
 
 /* =========================
    CHANGE SECTION
